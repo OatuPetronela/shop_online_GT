@@ -1,0 +1,40 @@
+<%- include("parts/header")%>
+<%- include("parts/navbar")%>
+<div class="container-fluid">
+    <a href="/toate_produsele" class="btn btn-dark mt-3">👈🏼Back</a>
+    <div class="row my-5">
+        <div class="col-4">
+            <img src="<%= product.image%>" class="card-img-top" alt="..."></div>
+        <div class="col-8">
+            <h2><%= product.title %></h2>
+            <hr>
+            <h5>Category :
+                <%=product.category%></h5>
+            <hr>
+            <h5 class="description">Description:
+                <br><%= product.description %></h5>
+            <hr>
+            <div class="d-flex">
+                <h5 class="me-2">
+                    <del>
+                        <%= product.price * 2 %>
+                        <%= product.price_sign %>
+                    </del>
+                </h5>
+                <h4><%= product.price %><%= product.price_sign %></h4>
+                <button class="btn btn-primary ms-3">🛒Add cart</button>
+            </div>
+            <hr>
+            <div>
+                <h4>Rating:
+                    <% for (let i = 0; i < product.rating.rate; i++) { %>
+                        <i class="fas fa-star"></i>
+                    <% } %>
+                    (<%= product.rating.count%>)
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("parts/footer")%>

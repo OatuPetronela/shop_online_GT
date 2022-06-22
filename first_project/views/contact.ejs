@@ -1,0 +1,35 @@
+<%- include("parts/header")%>
+<%- include("parts/navbar")%>
+<%- include("parts/style")%>
+<div class="row contact_form">
+    <div class="col-10">
+        <h1 class="text-center">Contact</h1>
+        <form class="row g-3 ms-5 my-5" action="/contact" method="post">
+            <div class="col-md-6">
+                <label for="inputNume" class="form-label">Nume</label>
+                <input type="text" class="form-control" name="fname"></div>
+                <div class="col-md-6">
+                    <label for="inputPrenume" class="form-label">Prenume</label>
+                    <input type="text" class="form-control" name="lname"></div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email"></div>
+                        <div class="col-md-6">
+                            <label for="inputSubiect" class="form-label">Subiect mesaj</label>
+                            <input type="text" class="form-control" name="smessage"></div>
+                            <div class="form-floating col-12">
+                                <textarea
+                                    class="form-control"
+                                    placeholder="Mesaj"
+                                    name="message"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Mesaj</label>
+                            </div>
+                            <div class="d-grid gap-2 col-12">
+                                <button class="btn btn-primary" type="submit" id="button">Trimite mesaj</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <%- include("parts/footer")%>

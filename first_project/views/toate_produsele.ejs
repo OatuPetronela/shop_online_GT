@@ -1,0 +1,30 @@
+<%- include("parts/header")%>
+<%- include("parts/navbar")%>
+<%- include("parts/style")%>
+<div class="row mt-3">
+  <% products.forEach(product => {%>
+    <div class="card-group col-sm-3">
+        <div class="card">
+    <a href="<%= product.id%>"><img src="<%= product.image%>" class="img" alt="...">
+    <div class="card-body">
+      <a href="<%= product.id%>" class="text-decoration-none text-dark text-center"><h5 class="card-title"> <% if(product.title.length >22){%> 
+        <%= product.title.substring(0,22)%>...
+      <%} else {%>
+        <%= product.title%>
+      <%}%></h5>
+    </a>
+      <div class="row">
+        <div class="col-6">
+      <p class="price"><%= product.price %> $</p>
+    </div>
+    <div class="col-6">
+      <a href="<%= product.id%>" class="btn btn-primary ms-5">🛒</a>
+    </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <%})%>
+  </div>
+
+<%- include("parts/footer")%>
